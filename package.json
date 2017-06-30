@@ -1,10 +1,7 @@
 {
   "name": "google-diff-match-patch",
   "version": "1.1.0",
-  "main": [
-    "javascript/diff_match_patch.js",
-    "javascript/diff_match_patch_uncompressed.js"
-  ],
+  "main": "javascript/diff_match_patch.js",
   "ignore": [
     "**/.*",
     "node_modules",
