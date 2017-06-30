@@ -9,6 +9,8 @@
   ],
   "description": "This is an unofficial mirror of the JavaScript version of the google-diff-match-patch library. The code included is unmodified.",
   "scripts": {
+    "build": "gulp build",
+    "postinstall": "gulp build",
     "test": "mocha './javascript/diff_match_patch.spec.js'"
   },
   "repository": {
