@@ -9,7 +9,7 @@
   ],
   "description": "This is an unofficial mirror of the JavaScript version of the google-diff-match-patch library. The code included is unmodified.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha './javascript/diff_match_patch.spec.js'"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,16 @@
     "url": "https://github.com/GerHobbelt/google-diff-match-patch/issues"
   },
   "homepage": "https://github.com/GerHobbelt/google-diff-match-patch",
-  "keywords": ["diff"],
-  "dependencies": {},
-  "devDependencies": {}
+  "keywords": [
+    "diff"
+  ],
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.4"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.1"
+  }
 }

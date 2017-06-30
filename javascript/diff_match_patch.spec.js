@@ -17,6 +17,99 @@
  * limitations under the License.
  */
 
+// Add variable if we're in a NodeJS environment
+if (typeof require === 'function') {
+  diff_match_patch  = require('./diff_match_patch')
+  assert            = require('assert')
+
+  assertEquals = function assertEquals() {
+    if (arguments.length == 2) {
+      expected = arguments[0]
+      value = arguments[1]
+    } else {
+      expected = arguments[1]
+      value = arguments[2]
+    }
+    assert.equal(expected, value)
+  }
+
+  assertTrue = function assertTrue() {
+    if (arguments.length == 1) {
+      value = arguments[0]
+    } else {
+      value = arguments[1]
+    }
+    assertEquals(true, value)
+  }
+
+  assertFalse = function assertFalse() {
+    if (arguments.length == 1) {
+      value = arguments[0]
+    } else {
+      value = arguments[1]
+    }
+    assertEquals(false, value)
+  }
+}
+
+
+// Entry point for mocha tests
+describe('diff_match_patch', function() {
+  it ('run tests', function() {
+    runTests()
+  })
+})
+
+
+/**
+ * The data structure representing a diff is an array of tuples:
+ * [[DIFF_DELETE, 'Hello'], [DIFF_INSERT, 'Goodbye'], [DIFF_EQUAL, ' world.']]
+ * which means: delete 'Hello', add 'Goodbye' and keep ' world.'
+ */
+var DIFF_DELETE = -1;
+var DIFF_INSERT = 1;
+var DIFF_EQUAL = 0;
+
+function runTests() {
+  for (var x = 0; x < tests.length; x++) {
+    eval(tests[x] + '()');
+  }
+}
+
+var tests = [
+    'testDiffCommonPrefix',
+    'testDiffCommonSuffix',
+    'testDiffCommonOverlap',
+    'testDiffHalfMatch',
+    'testDiffLinesToChars',
+    'testDiffCharsToLines',
+    'testDiffCleanupMerge',
+    'testDiffCleanupSemanticLossless',
+    'testDiffCleanupSemantic',
+    'testDiffCleanupEfficiency',
+    'testDiffPrettyHtml',
+    'testDiffText',
+    'testDiffDelta',
+    'testDiffXIndex',
+    'testDiffLevenshtein',
+    'testDiffBisect',
+    'testDiffMain',
+
+    'testMatchAlphabet',
+    'testMatchBitap',
+    'testMatchMain',
+
+    'testPatchObj',
+    'testPatchFromText',
+    'testPatchToText',
+    'testPatchAddContext',
+    'testPatchMake',
+    'testPatchSplitMax',
+    'testPatchAddPadding',
+    'testPatchApply'];
+
+
+
 
 // If expected and actual are the equivalent, pass the test.
 function assertEquivalent(msg, expected, actual) {

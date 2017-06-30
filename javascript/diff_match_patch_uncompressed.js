@@ -23,6 +23,14 @@
  * @author fraser@google.com (Neil Fraser)
  */
 
+
+
+/** If in NodeJS environment, export
+  */
+if (typeof module === 'object' && module.exports)
+  module.exports = diff_match_patch
+
+
 /**
  * Class containing the diff, match and patch methods.
  * @constructor
