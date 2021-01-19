@@ -11,4 +11,4 @@ gulp.task('build-js', function() {
     .pipe(gulp.dest("./javascript/"))
 })
 
-gulp.task('build', ['build-js'], function() {})
+gulp.task('build', gulp.parallel('build-js'))

@@ -1,10 +1,13 @@
 # Diff, Match and Patch
 
-This is a mirror/fork of the [Diff, Match and Patch Library](http://code.google.com/p/google-diff-match-patch/) by Neil Fraser.
+This is a fork of the [Diff, Match and Patch Library](https://github.com/whatl3y/google-diff-match-patch/) by Lance Whatley with an updated version of gulp.
 
 
 Diff, Match and Patch Library
 ==============================
+
+[https://github.com/whatl3y/google-diff-match-patch](https://github.com/whatl3y/google-diff-match-patch/)
+**Lance Whatley**
 
 [http://code.google.com/p/google-diff-match-patch/](http://code.google.com/p/google-diff-match-patch/)
 **Neil Fraser**
